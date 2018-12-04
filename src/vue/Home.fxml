@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" stylesheets="@../../../SampleFxDemo/src/samplefx/view/main.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #81BEF7;" styleClass="HBox" VBox.vgrow="NEVER">
+         <children>
+            <Button fx:id="out" alignment="CENTER" mnemonicParsing="false" onAction="#loadPane2" style="-fx-background-color: red;" text="X" textAlignment="RIGHT" HBox.hgrow="NEVER">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="1.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#loadhome" style="-fx-background-color: #F3F781;" text="القائمة">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <items>
+            <AnchorPane maxWidth="200.0" minHeight="0.0" minWidth="0.0" prefWidth="150.0">
+               <children>
+                  <Accordion layoutX="-42.0" layoutY="96.0" maxWidth="-Infinity" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <panes>
+                        <TitledPane animated="false" text="Etudiants">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button fx:id="btn1" mnemonicParsing="false" onAction="#loadPane" text="recherche" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <Button fx:id="btn2" layoutX="40.0" layoutY="36.0" mnemonicParsing="false" onAction="#loadPane3" text="Ajouter" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+                                    <Button fx:id="btnadd" layoutX="58.0" layoutY="84.0" mnemonicParsing="false" onAction="#btnAdd" text="تحميل" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Etablissement">
+                           <content>
+                              <AnchorPane>
+                                 <children>
+                                    <Button fx:id="btn3" mnemonicParsing="false" onAction="#loadEtablissement" text="Etablissement" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children></AnchorPane>
+                           </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Profils">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                        </TitledPane>
+                        <TitledPane animated="false" text="Employes">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#loadEmployes" text="Employes" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                 </children></AnchorPane>
+                          </content>
+                        </TitledPane>
+                     </panes>
+                  </Accordion>
+               </children>
+            </AnchorPane>
+            <AnchorPane minWidth="200.0">
+               <children>
+                  <VBox fx:id="dataPane" layoutX="10.0" layoutY="50.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label text="nbr  des Etudiant :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="nbrEtudiant" text="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label text="nbr des Employes :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="nbrEloye" text="0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <HBox>
+                           <children>
+                              <Label text="nbr des Etablissement :">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                              <Label fx:id="nbrEtablissement" text="0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font></Label>
+                           </children>
+                        </HBox>
+                        <BarChart fx:id="mChart" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="50.0" prefWidth="50.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" fx:id="xAxes" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="yAxes" side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                     </children></VBox>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</VBox>
